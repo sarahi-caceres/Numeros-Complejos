@@ -11,6 +11,7 @@ public class Fraccion {
         }
         this.numerador = numerador;
         this.denominador = denominador;
+        System.out.println("Fracción creada: " + this.numerador + "/" + this.denominador);
     }
 
     
