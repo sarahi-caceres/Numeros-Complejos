@@ -13,7 +13,7 @@ public class Fraccion {
         this.denominador = denominador;
     }
     public Fraccion Sumar (Fraccion fraccion2){
-        Fraccion fraccionSuma(0,0);
+        Fraccion fraccionSuma= new Fraccion(2,5 );
 
         
         return fraccionSuma;
@@ -42,7 +42,9 @@ public class Fraccion {
             menor = mayor % menor;
             mayor=temp;
 
+
         }
+        mcd=mayor;
         return mcd;
     }
 
