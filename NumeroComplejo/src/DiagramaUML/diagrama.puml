@@ -1,0 +1,97 @@
+@startuml
+package model{
+abstract class NumeroComplejo {
+    + modulo() : double
+    + formato() : String
+    -TransformarFormato():
+}
+
+class ComplejoCartesiano {
+    - real : Fraccion
+    - imaginaria : Fraccion
+    + formato() : String
+    
+}
+
+class ComplejoPolar {
+    - modulo : double
+    - angulo : double
+    + formato() : String
+}
+
+class Fraccion {
+    - numerador : int
+    - denominador : int
+    + sumar(f : Fraccion) : Fraccion
+    + restar(f : Fraccion) : Fraccion
+    + multiplicar(f : Fraccion) : Fraccion
+    + dividir(f : Fraccion) : Fraccion
+    + formato() : String
+}
+
+NumeroComplejo <|-- ComplejoCartesiano
+NumeroComplejo <|-- ComplejoPolar
+
+ComplejoCartesiano *-- "2" Fraccion
+}
+package Controller{
+abstract class NumeroComplejoController {
+
+}
+
+class ComplejoCartesianoController {
+
+}
+
+class ComplejoPolarController {
+
+}
+
+class FraccionController {
+
+}
+
+NumeroComplejoController <|-- ComplejoCartesianoController
+NumeroComplejoController <|-- ComplejoPolarController
+ComplejoCartesianoController *-- "2" FraccionController
+
+
+
+
+
+
+
+ComplejoPolar..|>ComplejoPolarController
+ComplejoCartesiano..|>ComplejoCartesianoController
+}
+
+package viewer{
+
+abstract class NumeroComplejoViewer {
+
+}
+
+class ComplejoCartesianoViewer {
+
+}
+
+class ComplejoPolarViewer {
++Leer
+}
+
+class FraccionViewer {
++LeerNumero()
+}
+
+class Main{
++
+}
+NumeroComplejoViewer <|-- ComplejoCartesianoViewer
+NumeroComplejoViewer <|-- ComplejoPolarViewer
+ComplejoCartesianoViewer *-- "2" FraccionViewer
+
+
+
+
+
+@enduml
