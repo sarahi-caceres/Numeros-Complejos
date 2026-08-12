@@ -44,5 +44,14 @@ public class Fraccion {
         return numerador + " / "+ denominador;
     }
 
+    public int getNumerador() {
+        return numerador;
+    }
+
+    public int getDenominador() {
+        return denominador;
+    }
+
+
 }
 
