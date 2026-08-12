@@ -13,10 +13,9 @@ public class Fraccion {
         this.denominador = denominador;
     }
     public Fraccion Sumar (Fraccion fraccion2){
-        Fraccion fraccionSuma= new Fraccion(2,5 );
-
         
-        return fraccionSuma;
+        
+        return new Fraccion fraccionSuma(0,0);
     }
     public int SacarMcm(int den1, int den2){
         int mcm=0;
